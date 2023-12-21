@@ -1,6 +1,6 @@
 # USF Control of Mobile Robot Labs (Fall 2023)
 
-This repository is an extension to [FAIRIS-Lite](https://github.com/biorobaw/FAIRIS-Lite). It contains the necessary python controller files which I have created for the different lab tasks required by this course.
+This repository is an extension to the project framework, [FAIRIS-Lite](https://github.com/biorobaw/FAIRIS-Lite). It contains the necessary python controller files which I have created for the different lab tasks required by this course.
 
 The controller files are used to simulate robot motion and sensor readings in the Webots development environment. The free, open source Webots simulator can be found [here](https://cyberbotics.com/).
 
@@ -29,3 +29,4 @@ https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/102984dd-1ef4
 ## Lab 2 - PID and Wall Following
 
 ### Objective
+This lab requires the use of proportional gain to control the speed of the robot based on its distance from the wall. Additionally, using proportional gain and lidar scanners to detect, avoid, and follow walls.
