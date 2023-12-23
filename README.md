@@ -45,7 +45,7 @@ This lab requires the use of proportional gain to control the speed of the robot
 
 Proportional gain control works by first, finding the distance error, <em>e(t)</em>. This can be calculated by subtracting the current LiDAR distance sensor reading, <em>y(t)</em>, by the target distance, <em>r(t)</em>. Using the distance error, you can obtain the control signal, <em>u(t)</em>, which is the calculated velocity directly proportional to the error. This can be calculated by choosing a constant <em>Kp</em> value and multiplying it with the error. Passing this control signal into the saturation function allows the speed to stay within robot limits by testing the extremes.
 
-The second part to this lab required the implementation of wall-following in combination with proportional gain control. Figure 3 below visualizes how wall-following works. Proportional gain slows down the robot as it gets closer to the walls and the wall-following algorithm tries to steer the robot to the center line - essentially avoiding the walls.
+The second part to this lab required the implementation of wall-following in combination with proportional gain control. Figure 3 below visualizes how wall-following works. Proportional gain slows down the robot as it gets closer to the walls and the wall-following algorithm tries to steer the robot back to the center line - essentially avoiding the walls.
 <p align="center">
 <img width="1397" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/d763d3e0-54bb-48fc-bd0e-60a0e0495df4">
 </p>
