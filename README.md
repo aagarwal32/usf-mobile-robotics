@@ -1,6 +1,6 @@
 # USF Control of Mobile Robot Labs (Fall 2023)
 
-This repository is an extension to the project framework, [FAIRIS-Lite](https://github.com/biorobaw/FAIRIS-Lite). It contains the necessary python controller files which I have created for the different lab tasks required by this course.
+This repository is an extension to the project framework, [FAIRIS-Lite](https://github.com/biorobaw/FAIRIS-Lite), that allows users to implement navigational control logic to robots in the Webots simulation. It contains the necessary python controller files which I have created for the different lab tasks required by this course.
 
 The controller files are used to simulate robot motion and sensor readings in the Webots development environment. The free, open source Webots simulator can be found [here](https://cyberbotics.com/).
 
