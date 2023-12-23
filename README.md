@@ -15,7 +15,12 @@ The objective for this lab is to use kinematics to move a 4-wheeled differential
 
 The waypoints through the maze are displayed as follows:
 
+<p align="center">
 <img width="500" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/d749cde9-b0f8-4e77-a773-e434fe9f3f97">
+</p>
+<p align="center">
+<em>Figure 1: Maze file with predefined waypoints the robot must navigate through</em>
+</p>
 
 To accomplish this task, required the use of several functions that make the robot perform straight-line, curved-line, and rotation motions. 
 A full report with more information and calculations for this lab can be found in this [report](https://github.com/aagarwal32/usf-mobile-robotics/blob/main/WebotsSim/controllers/Lab1_Task1/lab1-kinematics.pdf).
