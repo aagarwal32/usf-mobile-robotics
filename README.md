@@ -108,8 +108,44 @@ As seen by Figure 5 below, trilateration can mathematically calculate the robot'
 Upon finding the current cell the robot is in, if the cell is <em>empty</em>, it marks it as <em>visited</em>. The goal of this lab is to mark all cells as <em>visited</em>. In order to do this more efficiently, if the current cell is already <em>visited</em>, the program finds the next <em>empty</em> cell in the map. Figure 6 below shows the algorithm to move the robot to the next empty cell:
 
 <p align="center">
-<img src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/0e1e1dbf-71bf-46bb-b9cb-f4c5ec987ef3" alt="image">
+<img src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/8a407c93-789c-4319-bf22-eb97127b373c" alt="image">
 </p>
 <p align="center">
 <em>Figure 6: Visual representation of how the robot finds and moves to the next empty cell</em>
 </p>
+
+As seen by Figure 6, the robot is currently at cell 9. Before the robot moves, the program finds the next <em>empty</em> cell by iterating through the array of cells starting at index 0. The <em>target</em> is locked to cell 6 as it is the next empty cell. The robot compares its position to the <em>target</em> and takes a step-by-step approach to navigate to cell 6:
+
+<ol>
+  <li>The target row < current row</li>
+  <li>Robot rotates to heading 90 deg from east and moves one cell (current - 4 = next)</li>
+  <li>target row == current row and target cell > current cell</li>
+  <li>Robot rotates to heading 0 deg from east and moves one cell (current + 1 = next)</li>
+  <li>target cell == current cell</li>
+  <li>mark current cell as <em>visited</em></li>
+</ol>
+
+Here is the Python controller for this task: [Task 1](https://github.com/aagarwal32/usf-mobile-robotics/blob/main/WebotsSim/controllers/Lab4_Task1/Lab4_Task1.py).
+
+A video of the robot performing trilateration calculations to determine pose and mark all cells in the map as visited is shown below:
+
+https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/b28127ec-1d43-43ef-8688-3c2f0bb7d5c6
+
+The second part of this lab involves using Bayes theorem to determine <em>move</em> and <em>stay</em> probabilities for the robot. Using a given sensor model, the robot compares its calculated sensor readings to the actual environment. The sensor model is provided in Figure 7 below:
+
+<p align="center">
+<img width="795" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/7421e438-a077-4a47-a67c-885e8df96f4e">
+</p>
+<p align="center">
+<em>Figure 7: Motion and sensor model for probability calculations</em>
+</p>
+
+Based on the motion model from Figure 7, 0.8 represents the probability of a forward <em>move</em> motion and 0.2 if the robot ended up to <em>stay</em> in place. In the same figure, the sensor model determines the probability of a wall being present at the current LiDAR reading. In the sensor model, <em>s</em> is the given value and <em>z</em> is the calculated value. 0 means "no wall" and 1 means "wall". Using this information, the robot can calculate <em>move</em> and <em>stay</em> probabilities while taking into account the current and next cell configurations.
+
+A more in-depth overview for both lab 4 task 1 and task 2 can be found in this [report](https://github.com/aagarwal32/usf-mobile-robotics/blob/main/WebotsSim/controllers/Lab4_Task2/lab4-localization.pdf).
+
+Here is the Python controller for this task: [Task 2](https://github.com/aagarwal32/usf-mobile-robotics/blob/main/WebotsSim/controllers/Lab4_Task2/Lab4_Task2.py).
+
+A video of the robot analyzing wall-configurations and calculating move and stay probabilities is shown below:
+
+https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/9349f85a-d867-46d1-9327-5116982e476b
