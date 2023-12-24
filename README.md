@@ -186,3 +186,12 @@ As seen by Figure 9, the cell the robot is currently in has occupancy values tha
 <p align="center">
 <em>Figure 10: Generated maps based off the occupancy grid printed to the console</em>
 </p>
+
+The "W" in the generated map represents a wall, --> represents that the cell is visited and the direction the robot is facing, and any empty space means that there is no wall present. A more in-depth overview for this lab can be found in this [report](https://github.com/aagarwal32/usf-mobile-robotics/blob/main/WebotsSim/controllers/Lab5_Task1/lab5-mapping.pdf).
+
+Here is the Python controller for this task: [Task 1](https://github.com/aagarwal32/usf-mobile-robotics/blob/main/WebotsSim/controllers/Lab5_Task1/Lab5_Task1.py)
+
+The video below shows the creation of the occupancy grid and map generation in real time as the robot navigates through the maze:
+
+https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/4eac3bd3-8af3-4e55-b3cb-8d5faeef52ca
+
