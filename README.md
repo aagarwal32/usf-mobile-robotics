@@ -90,3 +90,26 @@ The Python controllers for both tasks part of lab 3: [Task 1](https://github.com
 The video below shows the lab 3 task 2 controller in action. The robot follows the bug0 algorithm - set to take right turns when met with an obstacle:
 
 https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/8cf7f384-cacf-4481-bade-6b9ef319369a
+
+## Lab 4 - Localization
+
+### Objective
+The objective for this lab is to perform trilateration calculations to estimate coordinates and cell location of the robot. The robot uses its onboard cameras and sensors to scan its surroundings, compute its pose, and navigate the maze while updating information for each new cell. The robot uses these localization methods to mark cells as visited and find unvisited cells. Additionally, it performs wall-based localization using probability and a sensor model.
+
+As seen by Figure 5 below, trilateration can mathematically calculate the robot's x and y position. The center x, y coordinates of each circle and their distance from the robot (radius) are passed as inputs into the trilateration function. The position of the robot is computed at the intersection of the three circles:
+
+<p align="center">
+<img width="461" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/90d81c80-33df-4909-9435-f2211d1018de">
+</p>
+<p align="center">
+<em>Figure 5: Visual representation of how trilateration works to find robot position</em>
+</p>
+
+Upon finding the current cell the robot is in, if the cell is <em>empty</em>, it marks it as <em>visited</em>. The goal of this lab is to mark all cells as <em>visited</em>. In order to do this more efficiently, if the current cell is already <em>visited</em>, the program finds the next <em>empty</em> cell in the map. Figure 6 below shows the algorithm to move the robot to the next empty cell:
+
+<p align="center">
+<img src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/0e1e1dbf-71bf-46bb-b9cb-f4c5ec987ef3" alt="image">
+</p>
+<p align="center">
+<em>Figure 6: Visual representation of how the robot finds and moves to the next empty cell</em>
+</p>
