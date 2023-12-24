@@ -64,7 +64,7 @@ https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/444c6f39-51a0
 ## Lab 3 - Bug0 Algorithm
 
 ### Objective
-This lab implements the bug0 algorithm to navigate the robot to a specified goal. It utilizes the onboard camera to identify the goal and LiDAR scanner for wall-avoidance. If the camera detects the goal, it will perform straight line motion towards it. If blocked by an obstacle, it will perform wall-avoidance until the goal is visible again.
+This lab implements bug 0, a search algorithm that navigates the robot to a specified goal. It utilizes the onboard camera to identify the goal and LiDAR scanner for wall-avoidance. If the camera detects the goal, it will perform straight line motion towards it. If blocked by an obstacle, it will perform wall-avoidance until the goal is visible again.
 
 <p align="center">
 <img width="424" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/1d2c4b84-5293-4b3b-9826-35698c4e3f65">
@@ -149,3 +149,40 @@ Here is the Python controller for this task: [Task 2](https://github.com/aagarwa
 A video of the robot analyzing wall-configurations and calculating move and stay probabilities is shown below:
 
 https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/9349f85a-d867-46d1-9327-5116982e476b
+
+## Lab 5 - Mapping
+
+### Objective
+The objective for this lab is to create an occupancy grid that is used to generate a map based off the robot's surroundings. It uses its onboard LiDAR scanner to detect free and occupied spaces and updates the map accordingly.
+
+To create the occupancy grid, the controller utilizes NumPy's 4D array to create a matrix of matrices. Each cell on the map contains sub cells that hold information on whether that space is <em>empty</em> or <em>occupied</em>. For this lab, each cell contains 3x3 matrix of sub cells. Figure 8 below visualizes this: 
+
+<p align="center">
+<img width="413" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/cb193443-ae50-44ce-ac4c-7ff1ac08c293">
+</p>
+<p align="center">
+<em>Figure 8: A map consisting of 4x4 cells - each cell consisting of 3x3 sub cells</em>
+</p>
+
+The information that each sub cell holds is in the form of log odds. The <em>occupied</em> value is assigned 0.6 and the <em>empty</em> value, 0.3 (these values are adjustable). The calculated log odds with values determined by the LiDAR scanner readings are then updated on the occupancy grid map. An example of this is provided by Figure 9 below:
+
+<p align="center">
+<img width="502" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/e808d2dd-7955-4982-bfe3-566d94b5460d">
+</p>
+<p align="center">
+<em>Figure 9: The robot's current cell occupancy values</em>
+</p>
+
+As seen by Figure 9, the cell the robot is currently in has occupancy values that match its surroundings. For instance, the log odd values, 0.41, match with the presence of the top and left walls - <em>occupied space</em>. The log odd values, -0.85, match with the presence of no walls right below the robot and to its immediate bottom and right surroundings - <em>empty space</em>. The occupancy grid is a key component in generating a map of the robot's surroundings. The final result is presented below in Figure 10:
+
+<div align="center">
+  
+  Example Map 1                      |  Example Map 2
+:-------------------------:|:-------------------------:
+![maze-1](https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/97cf68b1-bbc4-4ac9-be60-2883b94f196d)  |  ![maze-2](https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/2349f6cf-0667-4b3c-8df5-c00ad4cda8fb)
+
+</div>
+
+<p align="center">
+<em>Figure 10: Generated maps based off the occupancy grid printed to the console</em>
+</p>
