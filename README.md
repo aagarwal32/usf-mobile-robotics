@@ -41,7 +41,7 @@ https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/9b0d3649-8d3a
 This lab requires the use of proportional gain to control the speed of the robot based on its distance from the wall. Additionally, using proportional gain and LiDAR scanners to detect, avoid, and follow walls.
 
 <p align="center">
-<img width="816" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/57250cf0-fe24-421a-8fdf-a6339477d8b6">
+<img width="812" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/b35c84bf-5c8a-40d0-b106-b3220305135f">
 </p>
 <p align="center">
 <em>Figure 2: A flowchart describing the process of proportional gain</em>
@@ -51,7 +51,7 @@ Proportional gain control works by first, finding the distance error, <em>e(t)</
 
 The second part to this lab required the implementation of wall-following in combination with proportional gain control. Figure 3 below visualizes how wall-following works. Proportional gain slows down the robot as it gets closer to the walls and the wall-following algorithm tries to steer the robot back to the center line - essentially avoiding the walls.
 <p align="center">
-<img width="1397" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/d763d3e0-54bb-48fc-bd0e-60a0e0495df4">
+<img width="1400" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/7b68ea8d-5d09-4b83-ba4f-a588251c0cc5">
 </p>
 <p align="center">
 <em>Figure 3: Visualization of the wall-following algorithm</em>
@@ -63,7 +63,7 @@ Here are the corresponding Python controllers for Lab 2: [Task 1](https://github
 
 The video below shows Lab 2 Task 2 in action with the robot navigating using proportional gain and wall-following:
 
-https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/444c6f39-51a0-4ab3-a5e7-7b76f5db982c
+https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/cf51a1c7-36cd-4d70-8b3f-fa289027488d
 
 ## Lab 3 - Bug0 Algorithm
 
@@ -71,7 +71,7 @@ https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/444c6f39-51a0
 This lab implements bug 0, a search algorithm that navigates the robot to a specified goal. It utilizes the onboard camera to identify the goal and LiDAR scanner for wall-avoidance. If the camera detects the goal, it will perform straight line motion towards it. If blocked by an obstacle, it will perform wall-avoidance until the goal is visible again.
 
 <p align="center">
-<img width="424" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/1d2c4b84-5293-4b3b-9826-35698c4e3f65">
+<img width="420" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/15af045c-e6e9-4b7a-995e-d2c35c883a1d">
 </p>
 <p align="center">
 <em>Figure 4: Visualization of the path followed by the robot using bug0</em>
@@ -93,7 +93,7 @@ The Python controllers for both tasks part of lab 3: [Task 1](https://github.com
 
 The video below shows the lab 3 task 2 controller in action. The robot follows the bug0 algorithm - set to take right turns when met with an obstacle:
 
-https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/8cf7f384-cacf-4481-bade-6b9ef319369a
+https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/c5367bcd-e2db-4627-997d-9435438171a4
 
 ## Lab 4 - Localization
 
@@ -103,7 +103,7 @@ The objective for this lab is to perform trilateration calculations to estimate 
 As seen by Figure 5 below, trilateration can mathematically calculate the robot's x and y position. The center x, y coordinates of each circle and their distance from the robot (radius) are passed as inputs into the trilateration function. The position of the robot is computed at the intersection of the three circles:
 
 <p align="center">
-<img width="461" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/90d81c80-33df-4909-9435-f2211d1018de">
+<img width="460" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/f7938292-1688-4ace-a0e0-ff00129baba1">
 </p>
 <p align="center">
 <em>Figure 5: Visual representation of how trilateration works to find robot position</em>
@@ -112,7 +112,7 @@ As seen by Figure 5 below, trilateration can mathematically calculate the robot'
 Upon finding the current cell the robot is in, if the cell is <em>empty</em>, it marks it as <em>visited</em>. The goal of this lab is to mark all cells as <em>visited</em>. In order to do this more efficiently, if the current cell is already <em>visited</em>, the program finds the next <em>empty</em> cell in the map. Figure 6 below shows the algorithm to move the robot to the next empty cell:
 
 <p align="center">
-<img src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/8a407c93-789c-4319-bf22-eb97127b373c" alt="image">
+<img alt="image" width="800" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/3569bcfd-3083-45ae-a4d5-67d0a12934a8">
 </p>
 <p align="center">
 <em>Figure 6: Visual representation of how the robot finds and moves to the next empty cell</em>
@@ -133,12 +133,12 @@ Here is the Python controller for this task: [Task 1](https://github.com/aagarwa
 
 A video of the robot performing trilateration calculations to determine pose and mark all cells in the map as visited is shown below:
 
-https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/b28127ec-1d43-43ef-8688-3c2f0bb7d5c6
+https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/4c0e7a3b-1cda-46ba-8b15-8677f8d785d6
 
 The second part of this lab involves using Bayes theorem to determine <em>move</em> and <em>stay</em> probabilities for the robot. Using a given sensor model, the robot compares its calculated sensor readings to the actual environment. The sensor model is provided in Figure 7 below:
 
 <p align="center">
-<img width="795" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/7421e438-a077-4a47-a67c-885e8df96f4e">
+<img width="800" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/47b6d44b-dd59-4aba-8dcf-8c8ef65a5c05">
 </p>
 <p align="center">
 <em>Figure 7: Motion and sensor model for probability calculations</em>
@@ -152,7 +152,7 @@ Here is the Python controller for this task: [Task 2](https://github.com/aagarwa
 
 A video of the robot analyzing wall-configurations and calculating move and stay probabilities is shown below:
 
-https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/9349f85a-d867-46d1-9327-5116982e476b
+https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/2761d38d-909c-441c-9286-8c7a72d65893
 
 ## Lab 5 - Mapping
 
@@ -162,7 +162,7 @@ The objective for this lab is to create an occupancy grid that is used to genera
 To create the occupancy grid, the controller utilizes NumPy's 4D array to create a matrix of matrices. Each cell on the map contains sub cells that hold information on whether that space is <em>empty</em> or <em>occupied</em>. For this lab, each cell contains 3x3 matrix of sub cells. Figure 8 below visualizes this: 
 
 <p align="center">
-<img width="413" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/cb193443-ae50-44ce-ac4c-7ff1ac08c293">
+<img width="420" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/f1c069e9-9dd6-4fc9-a47a-c8fa36097a71">
 </p>
 <p align="center">
 <em>Figure 8: A map consisting of 4x4 cells - each cell consisting of 3x3 sub cells</em>
@@ -171,7 +171,7 @@ To create the occupancy grid, the controller utilizes NumPy's 4D array to create
 The information that each sub cell holds is in the form of log odds. The <em>occupied</em> value is assigned 0.6 and the <em>empty</em> value, 0.3 (these values are adjustable). The calculated log odds with values determined by the LiDAR scanner readings are then updated on the occupancy grid map. An example of this is provided by Figure 9 below:
 
 <p align="center">
-<img width="502" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/e808d2dd-7955-4982-bfe3-566d94b5460d">
+<img width="420" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/25d64517-f4b8-4d26-898d-240c1c8dd481">
 </p>
 <p align="center">
 <em>Figure 9: The robot's current cell occupancy values</em>
@@ -183,7 +183,7 @@ As seen by Figure 9, the cell the robot is currently in has occupancy values tha
   
   Example Map 1                      |  Example Map 2
 :-------------------------:|:-------------------------:
-![maze-1](https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/97cf68b1-bbc4-4ac9-be60-2883b94f196d)  |  ![maze-2](https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/2349f6cf-0667-4b3c-8df5-c00ad4cda8fb)
+![maze-1](https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/f6ceeb95-75a0-4757-a7ee-ba5da927b862)   |  ![maze-2](https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/d3eda83d-2344-4833-9683-1f05ce30a6d1)
 
 </div>
 
@@ -197,5 +197,6 @@ Here is the Python controller for this task: [Task 1](https://github.com/aagarwa
 
 The video below shows the creation of the occupancy grid and map generation in real time as the robot navigates through the maze:
 
-https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/4eac3bd3-8af3-4e55-b3cb-8d5faeef52ca
+https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/21e2bc8d-4270-417e-828d-f7ca05d979a2
 
+<!-- The End! -->
