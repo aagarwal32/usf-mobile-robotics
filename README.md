@@ -16,7 +16,7 @@ The objective for this lab is to use kinematics to move a 4-wheeled differential
 <p align="center">The waypoints through the maze are displayed as follows:</p>
 
 <p align="center">
-<img width="500" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/d749cde9-b0f8-4e77-a773-e434fe9f3f97">
+<img width="500" alt="image" src="https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/c40d3368-bbab-480d-86bf-2c97a84c3a6d">
 </p>
 <p align="center">
 <em>Figure 1: Maze file with predefined waypoints the robot must navigate through</em>
@@ -29,7 +29,11 @@ Here is the corresponding Python controller for lab 1: [Lab 1 Controller](https:
 
 The video below shows Lab 1 in action as the robot follows the waypoints described in Figure 1.
 
-https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/102984dd-1ef4-4ccf-a360-523d0c86b0dd
+
+
+https://github.com/aagarwal32/usf-mobile-robotics/assets/152243328/9b0d3649-8d3a-42cb-97b0-0fdb20f54aa6
+
+
 
 ## Lab 2 - PID and Wall Following
 
